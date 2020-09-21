@@ -1,0 +1,30 @@
+{
+  "name": "r-game",
+  "version": "0.0.1",
+  "description": "This is a video game",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mogrenn/R-game.git"
+  },
+  "keywords": [
+    "game",
+    "video",
+    "game",
+    "gpu.js",
+    "html5"
+  ],
+  "author": "Mogrenn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mogrenn/R-game/issues"
+  },
+  "homepage": "https://github.com/Mogrenn/R-game#readme",
+  "dependencies": {
+    "electron": "^10.1.2",
+    "gpu.js": "^2.10.3"
+  }
+}
