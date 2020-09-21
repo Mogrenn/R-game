@@ -25,7 +25,6 @@ function keyBoardListenerDown(e) {
     switch (e.keyCode) {
         case 68: //d
             game.player.vx = 1;
-            game.player.draw(game.renderer.foregroundCtx);
             break;
         case 83: //s
             game.player.vy = 1;
@@ -43,16 +42,20 @@ function keyBoardListenerUp(e) {
 
     switch (e.keyCode) {
         case 68: //d
-            game.player.vx = 0;
+            if (game.player.vx !== -1)
+                game.player.vx = 0;
             break;
         case 83: //s
-            game.player.vy = 0;
+            if (game.player.vy !== -1)
+                game.player.vy = 0;
             break;
         case 65: //a
-            game.player.vx = 0;
+            if (game.player.vx !== 1)
+                game.player.vx = 0;
             break;
         case 87: //w
-            game.player.vy = 0;
+            if (game.player.vy !== 1)
+                game.player.vy = 0;
             break;
     }
 }
