@@ -7,10 +7,6 @@ class Entity {
     }
 
     draw(ctx) {
-        console.log("Hej");
-        ctx.beginPath();
-        ctx.strokeStyle = "Red";
-        ctx.rect(this.x, this.y, this.width, this.height);
-        ctx.stroke();
+        throw new Error("Implement this function");
     }
 }
