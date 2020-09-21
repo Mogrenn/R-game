@@ -1,5 +1,4 @@
 const {app, BrowserWindow} = require("electron");
-const game = require("./game_files/game");
 
 function createWindow() {
     const win = new BrowserWindow({
@@ -11,8 +10,7 @@ function createWindow() {
         }
     });
     //win.removeMenu();
-    win.loadFile("index.html");
-    game.start();
+    win.loadFile("index.html")
 }
 
 app.whenReady().then(createWindow);
