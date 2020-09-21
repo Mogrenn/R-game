@@ -1,9 +1,11 @@
 class Player extends Entity{
 
-    constructor(x, y, w, h) {
+    constructor(x, y, w, h, specialClass) {
         super(x, y, w, h);
+        this.specialClass = specialClass;
         this.vx = 0;
         this.vy = 0;
+        this.playerName = "Test";
     }
 
     movement() {
