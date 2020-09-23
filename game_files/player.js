@@ -1,16 +1,9 @@
-class Player extends Entity{
+class Player extends MovableEntity{
 
-    constructor(x, y, w, h, specialClass) {
-        super(x, y, w, h);
+    constructor(x, y, w, h, specialClass, vx, vy) {
+        super(x, y, w, h, vx, vy);
         this.specialClass = specialClass;
-        this.vx = 0;
-        this.vy = 0;
         this.playerName = "Test";
-    }
-
-    movement() {
-        this.x += this.vx;
-        this.y += this.vy;
     }
 
     draw(ctx) {

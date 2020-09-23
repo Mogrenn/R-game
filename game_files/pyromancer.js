@@ -9,3 +9,9 @@ class Pyromancer extends SpecialClasses{
 
     }
 }
+
+class FireBall extends Entity{
+    constructor() {
+        super();
+    }
+}

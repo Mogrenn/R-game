@@ -5,7 +5,7 @@ class Game {
         this.renderer = new Renderer();
         addEventListener("keydown", keyBoardListenerDown);
         addEventListener("keyup", keyBoardListenerUp);
-        this.player = new Player(100, 100, 30, 30, new Pyromancer());
+        this.player = new Player(100, 100, 30, 30, new Pyromancer(), 0, 0);
     }
 
     clearForeground() {
