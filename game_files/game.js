@@ -5,7 +5,8 @@ class Game {
         this.renderer = new Renderer();
         addEventListener("keydown", keyBoardListenerDown);
         addEventListener("keyup", keyBoardListenerUp);
-        this.player = new Player(100, 100, 30, 30, new Pyromancer(), 0, 0);
+        addEventListener("mousedown", onMousedown);
+        this.player = new Pyromancer(100, 100, 30, 30, 0, 0);
     }
 
     clearForeground() {
@@ -14,6 +15,11 @@ class Game {
 
     gameLoop() {
         game.clearForeground();
+
+        for (let i = 0; i < game.player.fireBalls.length; i++) {
+            game.player.fireBalls[i].draw(game.renderer.foregroundCtx);
+        }
+
         game.player.draw(game.renderer.foregroundCtx);
         requestAnimationFrame(game.gameLoop);
     }
@@ -57,6 +63,14 @@ function keyBoardListenerUp(e) {
             if (game.player.vy !== 1)
                 game.player.vy = 0;
             break;
+    }
+}
+
+function onMousedown(e) {
+    console.log(e.button);
+    switch (e.button) {
+        case 0:
+            game.player.ability1();
     }
 }
 
