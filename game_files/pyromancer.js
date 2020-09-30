@@ -19,6 +19,7 @@ class FireBall extends MovableEntity{
         this.startY = y;
         this.currentX = x;
         this.currentY = y;
+        this.dead = false;
     }
 
     draw(ctx) {
@@ -32,7 +33,7 @@ class FireBall extends MovableEntity{
 
     update() {
         if (Math.abs(this.currentX - this.startX) > 200 || Math.abs(this.currentY - this.startY) > 200) {
-
+            this.dead = true;
         } else {
             this.currentX += this.vx;
         }

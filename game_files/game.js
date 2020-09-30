@@ -17,7 +17,12 @@ class Game {
         game.clearForeground();
 
         for (let i = 0; i < game.player.fireBalls.length; i++) {
-            game.player.fireBalls[i].draw(game.renderer.foregroundCtx);
+            if (!game.player.fireBalls[i].dead) {
+                game.player.fireBalls[i].draw(game.renderer.foregroundCtx);
+            } else {
+                console.log("test")
+                game.player.fireBalls.splice(i, 1);
+            }
         }
 
         game.player.draw(game.renderer.foregroundCtx);
