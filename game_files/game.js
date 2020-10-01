@@ -6,27 +6,18 @@ class Game {
         addEventListener("keydown", keyBoardListenerDown);
         addEventListener("keyup", keyBoardListenerUp);
         addEventListener("mousedown", onMousedown);
-        this.player = new Pyromancer(100, 100, 30, 30, 0, 0);
-    }
-
-    clearForeground() {
-        this.renderer.foregroundCtx.clearRect(0,0, game.renderer.foregroundCanvas.width, game.renderer.foregroundCanvas.height);
+        this.player = new Pyromancer(100, 100, 30, 30, 0, 0, this.renderer);
     }
 
     gameLoop() {
-        game.clearForeground();
 
         for (let i = 0; i < game.player.fireBalls.length; i++) {
-            if (!game.player.fireBalls[i].dead) {
-                game.player.fireBalls[i].draw(game.renderer.foregroundCtx);
-            } else {
-                console.log("test")
+            if (game.player.fireBalls[i]) {
                 game.player.fireBalls.splice(i, 1);
             }
         }
 
-        game.player.draw(game.renderer.foregroundCtx);
-        requestAnimationFrame(game.gameLoop);
+        requestAnimationFrame(() => game.gameLoop());
     }
 
 }

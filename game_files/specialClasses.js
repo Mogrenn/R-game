@@ -1,6 +1,6 @@
 class SpecialClasses extends Player{
-    constructor(x, y, w, h, vx, vy) {
-        super(x, y, w, h, vx, vy);
+    constructor(x, y, w, h, vx, vy, ctx) {
+        super(x, y, w, h, vx, vy, ctx);
     }
 
     ability1() {

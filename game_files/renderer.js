@@ -8,4 +8,12 @@ class Renderer {
         this.animationCtx = this.animationCanvas.getContext("2d");
     }
 
+    clearForegroundCtx() {
+        this.foregroundCtx.clearRect(0,0, game.renderer.foregroundCanvas.width, game.renderer.foregroundCanvas.height);
+    }
+
+    clearAnimationCtx() {
+        this.animationCtx.clearRect(0,0, this.foregroundCanvas.width, this.foregroundCanvas.height);
+    }
+
 }
